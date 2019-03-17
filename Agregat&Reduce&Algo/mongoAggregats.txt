@@ -1,0 +1,39 @@
+db.users.aggregate([
+    {
+        $match:{
+            'gender' : 'female'
+        }
+    },{
+        $group:{
+            _id: "$gender",
+            avgScore: { $avg: "$score" }
+        }
+      }
+    ]
+   )
+
+
+
+le resultat ouput:
+{ "_id" : "female", "avgQuantity" : 4 }
+
+
+
+
+2eme Request : 
+
+db.users.distinct("category")
+
+le resultat ouput:
+[ "dev", "sale", "op", "art" ]
+
+
+version 2:
+db.users.aggregate([{ $group: { _id: null, category: {$addToSet: "$category" }} }])
+
+le resultat ouput:
+{ "_id" : null, "category": [ "art", "op", "sale", "dev" ] }
+
+
+
+

@@ -1,0 +1,36 @@
+[ 0, 1, 2, 3, 4 ].reduce( ( acc, curr ) => acc + curr, 10);
+
+La methode reduce est une methode appartenant aux tableaux javascript,
+
+Un tableau contenant des listes ou valeurs va effectuer l'action de la fonction écrite dans le reduce,
+sur l'élément actuel du tableau en fonction de l'accumulation des éléments précédants du tableau.
+
+La variable acc est l'Accumulateur, elle va contenir tous les éléments du tableau qui sont passés dans la fonction, à l'aide de la fonction callback.
+
+La variable curr est la VaraibleCourante, il s'agit de l'éléments du tableau à l'instant T durant le parcours du tableau.
+
+Le 4eme parametre : Il s'agit de la ValeurInitiale (il s'agit d'un tableau, parametre pouvant étre null).
+Si ce parametre est set alors la VariableCourante est l'élement d'index 0 et l'Accumulateur va étre égale à la VaraibleInitiale.
+Sinon l'Acculumlateur va être egale à l'élément d'index 0 et la VariableCourante sera l'élément d'index 1 du tableaux.
+
+La fleche => permet de return l'action écrite coté de la fleche.
+
+Dans le cadre d'un tableau possédant des listes, reduce nous permettera de recupérer et de stocker les élements d'une liste venant d'un aggregat.
+Ce qui sera utile pour la récupération de données venant de mongoDB.
+
+par exemple :
+var amis = [
+  { "nom": "Quentin", "livres": ["City Hall", "Harry Potter"]},
+  { "nom": "Alice", "livres": ["L'Avare", "Les Fleurs du Mal"]}
+]
+
+var tousLivres = amis.reduce(function(prev, curr) {
+  return [...prev, ...curr.livres];
+}, ["Perceval"]);
+
+// tousLivres = ["Perceval", "City Hall", "Harry Potter", 
+//               "L'Avare", "Les Fleurs du Mal"]
+
+Réponse à [ 0, 1, 2, 3, 4 ].reduce( ( acc, curr ) => acc + curr, 10);
+
+ouput : 20

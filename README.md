@@ -6,7 +6,7 @@ les 4 étapes sont réalisé dans le répertoire NodeJs2Folhomee
 Le repertoire Agregat&Reduce&Algo contient le test d'algo, celui de mongoDB et de lecture de code.
 
 ### Algo
-Pour le test d'algo, vous pouvez voir le résultat via console.log(), il suffit de déposer le répertoire AlgoFolHomeePothier dans un server Apache2 ou autres.
+Pour le test d'algo, vous pouvez voir le résultat via console.log(), il suffit de déposer le répertoire Agregat&Reduce&Algo/AlgoFolHomeePothier dans un server Apache2 ou autres.
 Ou simplement regarder le code du fichier algo.js.
 
 ### mongoDB
